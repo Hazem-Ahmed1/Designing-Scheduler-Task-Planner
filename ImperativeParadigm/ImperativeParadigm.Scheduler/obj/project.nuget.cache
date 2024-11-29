@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jP+7JPtwRc8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bedo\\.nuget\\packages\\fsharp.core\\9.0.100\\fsharp.core.9.0.100.nupkg.sha512"
+  ],
+  "logs": []
+}
