@@ -13,6 +13,8 @@
     <SourceRoot Include="C:\Users\haazm\.nuget\packages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Data_SqlClient Condition=" '$(PkgMicrosoft_Data_SqlClient)' == '' ">C:\Users\haazm\.nuget\packages\microsoft.data.sqlclient\5.2.2</PkgMicrosoft_Data_SqlClient>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\haazm\.nuget\packages\fsharp.core\8.0.401</PkgFSharp_Core>
+    <PkgDapper Condition=" '$(PkgDapper)' == '' ">C:\Users\haazm\.nuget\packages\dapper\2.1.35</PkgDapper>
   </PropertyGroup>
 </Project>
