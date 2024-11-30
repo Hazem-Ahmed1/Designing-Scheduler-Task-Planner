@@ -11,11 +11,11 @@ Create Table Tasks
 	DueDate DATETIME NOT NULL,
 	[Priority] INT NOT NULL, -- ('Low' = 3, 'Medium' = 2, 'High' = 1)
 	CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    [Status] VARCHAR(10) DEFAULT('Pending') -- ('Pending' = 0, 'Completed' = 1, 'Overdue' = -1)
+    [Status] VARCHAR(10) DEFAULT 'Pending' CHECK ([Status] IN ('Pending', 'Completed', 'Overdue')) -- Validate valid statuses
 );
 GO
-
-INSERT INTO Tasks ([Description], DueDate, [Priority],[Status], CreatedAt)
+-- to test
+INSERT INTO Tasks ([Description], DueDate, [Priority], CreatedAt,[Status])
 VALUES 
     ('Finish project report', '2024-12-01 17:00:00', 1, GETDATE(),'Completed'),
     ('Prepare presentation', '2024-12-05 10:00:00', 2, GETDATE(),'Pending'),
@@ -27,4 +27,9 @@ GO
 SELECT * FROM Tasks
 drop table Tasks;
 
-INSERT INTO Tasks  VALUES ('aaaaaaaaaaaaa','2024-12-30',1,'Pending', GETDATE())
+-- Actual Add Task
+INSERT INTO Tasks ([Description], DueDate, [Priority]) VALUES ('Complete the project', '2024-12-30', 1);
+
+SELECT *
+FROM Tasks
+WHERE Status = 'Completed' OR Priority OR DueDate
