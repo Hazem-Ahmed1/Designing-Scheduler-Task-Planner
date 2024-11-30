@@ -8,7 +8,7 @@ let showTasks() =
 
     System.Console.Clear()
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
+        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
         let query = "SELECT * FROM Tasks"
         use connection = new SqlConnection(connectionString)
         connection.Open()
@@ -32,6 +32,6 @@ let showTasks() =
                  }
             rows |> List.ofSeq
         results
-    with | ex -> 
+    with | ex ->
         printfn "Error: %s" ex.Message
         []

@@ -16,7 +16,6 @@ let insertTask description dueDate priority  =
         command.Parameters.AddWithValue("@Description", description) |> ignore
         command.Parameters.AddWithValue("@DueDate", dueDate) |> ignore
         command.Parameters.AddWithValue("@Priority", priority) |> ignore
-        //command.Parameters.AddWithValue("@Status", status) |> ignore
 
         let rowsAffected = command.ExecuteNonQuery()
         printfn "%d row(s) inserted." rowsAffected
@@ -43,7 +42,6 @@ let getUserInputAndInsertTask () =
     printfn "%s initially" sts
     System.Console.ResetColor()
 
-    //let status = Console.ReadLine()
 
     // Insert the task into the database
     insertTask description dueDate priority

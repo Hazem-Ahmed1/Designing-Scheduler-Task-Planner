@@ -179,3 +179,16 @@ D:\Collage\Abdelwahed\4th\First Term\Concept Of Programming\Task\Designing-Sched
 D:\Collage\Abdelwahed\4th\First Term\Concept Of Programming\Task\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\obj\Debug\net8.0\ImperativeParadigm.Scheduler.pdb
 D:\Collage\Abdelwahed\4th\First Term\Concept Of Programming\Task\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\obj\Debug\net8.0\ImperativeParadigm.Scheduler.genruntimeconfig.cache
 D:\Collage\Abdelwahed\4th\First Term\Concept Of Programming\Task\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\obj\Debug\net8.0\ref\ImperativeParadigm.Scheduler.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\AppSettings.json
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Bedo\Documents\GitHub\Designing-Scheduler-Task-Planner\ImperativeParadigm\ImperativeParadigm.Scheduler\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

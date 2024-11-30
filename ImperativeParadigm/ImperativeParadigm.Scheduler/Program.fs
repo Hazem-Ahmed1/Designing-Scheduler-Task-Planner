@@ -5,6 +5,9 @@ open UpdateTask
 open DeleteTask
 open FilterUsingQuery
 open PrintFormatter
+open SortUsingQuery
+open FilterWithList
+open SortWithList
 
 [<EntryPoint>]
 let main argv =
@@ -35,17 +38,18 @@ let main argv =
             getUserInputAndDeleteTask()
         | 5 ->
             printfn "You choose: Filter Tasks"
-            // Call the function to filter tasks
-            Print(getUserInputAndFilterTasks())
+            //Print(getUserInputAndFilterTasks())
+            Print(getUserInputAndFilterTasksImpartive())
         | 6 ->
             printfn "You choose: Sort Tasks"
             // Call the function to sort tasks
-            //sortTasks() // Define this function
+            //Print(getUserInputAndSortTasks()) // Define this function
+            Print(getUserInputAndSortTasksImperative())
         | _ ->
         printfn "Invalid option. Please choose a number between 1 and 6."
     | (false, _) -> printfn "Invalid input. Please enter a valid number."
 
-    System.Console.ReadKey() |> ignore
+    Console.ReadKey() |> ignore
     0
 
 
