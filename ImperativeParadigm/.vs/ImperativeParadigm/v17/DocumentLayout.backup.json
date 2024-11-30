@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\retrivetasks.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\retrivetasks.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\data.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\data.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeleteTask.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T02:18:27.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateTask.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAACMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T02:07:17.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Data.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Data.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\Data.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Data.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\Data.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-29T23:44:57.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddTask.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\AddTask.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\AddTask.fs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T01:42:08.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RetriveTasks.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-29T23:17:03.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.fs",
+              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\Program.fs",
+              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\Program.fs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-29T17:47:14.527Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
