@@ -11,13 +11,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Compile Include="TaskInfo.fs" />
+    <Compile Include="RetriveTasks.fs" />
+    <Compile Include="SortUsingQuery.fs" />
+    <Compile Include="SortWithList.fs" />
     <Compile Include="PrintFormatter.fs" />
     <Compile Include="FilterWithList.fs" />
     <Compile Include="FilterUsingQuery.fs" />
     <Compile Include="DeleteTask.fs" />
     <Compile Include="UpdateTask.fs" />
     <Compile Include="AddTask.fs" />
-    <Compile Include="RetriveTasks.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

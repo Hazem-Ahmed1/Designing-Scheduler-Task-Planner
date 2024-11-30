@@ -5,17 +5,18 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Abdelwahed\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Bedo\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\Abdelwahed\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\Bedo\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_Extensions_Configuration Condition=" '$(PkgMicrosoft_Extensions_Configuration)' == '' ">C:\Users\Abdelwahed\.nuget\packages\microsoft.extensions.configuration\9.0.0</PkgMicrosoft_Extensions_Configuration>
-    <PkgMicrosoft_Extensions_Configuration_Json Condition=" '$(PkgMicrosoft_Extensions_Configuration_Json)' == '' ">C:\Users\Abdelwahed\.nuget\packages\microsoft.extensions.configuration.json\9.0.0</PkgMicrosoft_Extensions_Configuration_Json>
-    <PkgMicrosoft_Data_SqlClient Condition=" '$(PkgMicrosoft_Data_SqlClient)' == '' ">C:\Users\Abdelwahed\.nuget\packages\microsoft.data.sqlclient\5.2.2</PkgMicrosoft_Data_SqlClient>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\Abdelwahed\.nuget\packages\fsharp.core\9.0.100</PkgFSharp_Core>
+    <PkgMicrosoft_Extensions_Configuration Condition=" '$(PkgMicrosoft_Extensions_Configuration)' == '' ">C:\Users\Bedo\.nuget\packages\microsoft.extensions.configuration\9.0.0</PkgMicrosoft_Extensions_Configuration>
+    <PkgMicrosoft_Extensions_Configuration_Json Condition=" '$(PkgMicrosoft_Extensions_Configuration_Json)' == '' ">C:\Users\Bedo\.nuget\packages\microsoft.extensions.configuration.json\9.0.0</PkgMicrosoft_Extensions_Configuration_Json>
+    <PkgMicrosoft_Data_SqlClient Condition=" '$(PkgMicrosoft_Data_SqlClient)' == '' ">C:\Users\Bedo\.nuget\packages\microsoft.data.sqlclient\5.2.2</PkgMicrosoft_Data_SqlClient>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\Bedo\.nuget\packages\fsharp.core\9.0.100</PkgFSharp_Core>
   </PropertyGroup>
 </Project>
