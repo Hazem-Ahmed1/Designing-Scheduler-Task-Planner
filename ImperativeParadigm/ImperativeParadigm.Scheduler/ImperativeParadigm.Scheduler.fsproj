@@ -6,7 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="DeleteTask.fs" />
+    <Compile Include="UpdateTask.fs" />
+    <Compile Include="AddTask.fs" />
+    <Compile Include="TaskInfo.fs" />
+    <Compile Include="RetriveTasks.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj": {}
+    "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj": {
+    "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+        "projectUniqueName": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
         "projectName": "ImperativeParadigm.Scheduler",
-        "projectPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+        "projectPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
         "packagesPath": "C:\\Users\\Bedo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\obj\\",
+        "outputPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,11 @@
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[9.0.100, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )",
               "generatePathProperty": true
             }
           },
