@@ -1,30 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\",
+  "WorkspaceRootPath": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\printformatter.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\printformatter.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\filterwithlist.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\filterwithlist.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\filterusingquery.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\filterusingquery.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
       "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\program.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\retrivetasks.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\retrivetasks.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
       "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\retrivetasks.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|c:\\users\\bedo\\documents\\github\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\data.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\data.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\deletetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\updatetask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\addtask.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\taskinfo.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\taskinfo.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\imperativeparadigm.scheduler.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\imperativeparadigm.scheduler.fsproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|d:\\collage\\abdelwahed\\4th\\first term\\concept of programming\\task\\designing-scheduler-task-planner\\imperativeparadigm\\imperativeparadigm.scheduler\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DBCC9EDC-4A3A-484E-802A-C9C6388B26F7}|ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj|solutionrelative:imperativeparadigm.scheduler\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,90 +54,146 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeleteTask.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
-              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
-              "RelativeToolTip": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAdAAAAAAAAAA==",
+              "Title": "PrintFormatter.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\PrintFormatter.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\PrintFormatter.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\PrintFormatter.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\PrintFormatter.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-30T02:18:27.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpdateTask.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
-              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
-              "RelativeToolTip": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAACMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-30T02:07:17.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Data.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Data.fs",
-              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\Data.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Data.fs",
-              "RelativeToolTip": "ImperativeParadigm.Scheduler\\Data.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-29T23:44:57.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddTask.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
-              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\AddTask.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
-              "RelativeToolTip": "ImperativeParadigm.Scheduler\\AddTask.fs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACgAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-30T01:42:08.137Z",
+              "WhenOpened": "2024-11-30T13:26:23.337Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "RetriveTasks.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
               "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\RetriveTasks.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\RetriveTasks.fs",
               "RelativeToolTip": "ImperativeParadigm.Scheduler\\RetriveTasks.fs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-29T23:17:03.532Z",
+              "WhenOpened": "2024-11-30T13:24:07.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "FilterWithList.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\FilterWithList.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\FilterWithList.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\FilterWithList.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\FilterWithList.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T13:24:03.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ImperativeParadigm.Scheduler.fsproj",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\ImperativeParadigm.Scheduler.fsproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001351|",
+              "WhenOpened": "2024-11-30T12:42:38.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FilterUsingQuery.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\FilterUsingQuery.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\FilterUsingQuery.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\FilterUsingQuery.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\FilterUsingQuery.fs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAqwEAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T12:16:40.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppSettings.json",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AppSettings.json",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\AppSettings.json",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AppSettings.json",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\AppSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-30T11:22:59.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DeleteTask.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\DeleteTask.fs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T02:18:27.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateTask.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\UpdateTask.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T02:07:17.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskInfo.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\TaskInfo.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\TaskInfo.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\TaskInfo.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\TaskInfo.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-29T23:44:57.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddTask.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
+              "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\AddTask.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\AddTask.fs",
+              "RelativeToolTip": "ImperativeParadigm.Scheduler\\AddTask.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-30T01:42:08.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.fs",
-              "DocumentMoniker": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
+              "DocumentMoniker": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
               "RelativeDocumentMoniker": "ImperativeParadigm.Scheduler\\Program.fs",
-              "ToolTip": "C:\\Users\\Bedo\\Documents\\GitHub\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
+              "ToolTip": "D:\\Collage\\Abdelwahed\\4th\\First Term\\Concept Of Programming\\Task\\Designing-Scheduler-Task-Planner\\ImperativeParadigm\\ImperativeParadigm.Scheduler\\Program.fs",
               "RelativeToolTip": "ImperativeParadigm.Scheduler\\Program.fs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAADwvyYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-29T17:47:14.527Z",
               "EditorCaption": ""
