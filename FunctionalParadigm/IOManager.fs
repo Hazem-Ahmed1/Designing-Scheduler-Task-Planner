@@ -11,7 +11,8 @@ module IOManager =
     let loadTasks () =
         use connection = new SqlConnection(connectionString)
         connection.Open()
-        connection.Query<Task>("SELECT * FROM Tasks").AsList()
+        connection.Query<Task>("SELECT * FROM Tasks")
+        |> Seq.toList 
 
     // Add a task to the database
     let addTaskToDb task =
