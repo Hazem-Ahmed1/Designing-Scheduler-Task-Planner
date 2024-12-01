@@ -7,7 +7,7 @@ open TaskInfo
 
 let filterTasks status priority dueDate =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
+        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
         let query =
                 "SELECT *
                  FROM Tasks
@@ -45,6 +45,7 @@ let filterTasks status priority dueDate =
         []
 
 let getUserInputAndFilterTasks () =
+    
     printf "Enter status (or leave blank to skip): "
     let status = Console.ReadLine()
 

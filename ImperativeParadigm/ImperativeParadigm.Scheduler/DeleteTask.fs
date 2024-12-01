@@ -3,10 +3,11 @@
 open System
 open Microsoft.Data.SqlClient
 open Config
+open System.Threading
 
 let deleteTask taskId =
    try
-        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
+        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
 
         let query = "DELETE FROM Tasks WHERE Task_ID = @Task_ID"
 
@@ -21,6 +22,8 @@ let deleteTask taskId =
             printfn "Task with ID %d deleted successfully." taskId
         else
             printfn "No task with ID %d found." taskId
+        Thread.Sleep(1300)
+        Console.Clear()
     with
         | ex -> printfn "Error: %s" ex.Message
 
