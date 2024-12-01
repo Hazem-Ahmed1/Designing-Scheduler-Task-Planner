@@ -2,30 +2,35 @@
 
 open System
 open Microsoft.Data.SqlClient
+open Config
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
+     try
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
 
-    let connectionString = "Data Source=DESKTOP-PAV8I18\SQLEXPRESS;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
-
-    let query = "UPDATE Tasks
+        let query = "UPDATE Tasks
                  SET Description = @Description,
                      DueDate = @DueDate,
                      Priority = @Priority,
                      Status = @Status
                  WHERE Task_ID = @Task_ID"
 
-    use connection = new SqlConnection(connectionString)
-    connection.Open()
+        use connection = new SqlConnection(connectionString)
+        connection.Open()
 
-    use command = new SqlCommand(query, connection)
-    command.Parameters.AddWithValue("@Task_ID", taskId) |> ignore
-    command.Parameters.AddWithValue("@Description", newDescription) |> ignore
-    command.Parameters.AddWithValue("@DueDate", newDueDate) |> ignore
-    command.Parameters.AddWithValue("@Priority", newPriority) |> ignore
-    command.Parameters.AddWithValue("@Status", newStatus) |> ignore
+        use command = new SqlCommand(query, connection)
+        command.Parameters.AddWithValue("@Task_ID", taskId) |> ignore
+        command.Parameters.AddWithValue("@Description", newDescription) |> ignore
+        command.Parameters.AddWithValue("@DueDate", newDueDate) |> ignore
+        command.Parameters.AddWithValue("@Priority", newPriority) |> ignore
+        command.Parameters.AddWithValue("@Status", newStatus) |> ignore
 
-    let rowsAffected = command.ExecuteNonQuery()
-    printfn "%d row(s) updated." rowsAffected
+        let rowsAffected = command.ExecuteNonQuery()
+        printfn "%d row(s) updated." rowsAffected
+
+     with
+        | ex -> printfn "Error: %s" ex.Message
+
 
 let getUserInputAndUpdateTask () =
     Console.Clear()

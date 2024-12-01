@@ -6,16 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Config.fs" />
+    <EmbeddedResource Include="AppSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="TaskInfo.fs" />
+    <Compile Include="RetriveTasks.fs" />
+    <Compile Include="SortUsingQuery.fs" />
+    <Compile Include="SortWithList.fs" />
+    <Compile Include="PrintFormatter.fs" />
+    <Compile Include="FilterWithList.fs" />
+    <Compile Include="FilterUsingQuery.fs" />
     <Compile Include="DeleteTask.fs" />
     <Compile Include="UpdateTask.fs" />
     <Compile Include="AddTask.fs" />
-    <Compile Include="TaskInfo.fs" />
-    <Compile Include="RetriveTasks.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="9.0.100" />
   </ItemGroup>
 
 </Project>
