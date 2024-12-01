@@ -4,16 +4,13 @@ open System
 
 let Print results =
     Console.Clear()
-    //printfn "ID\tDescription\t\t\t\tDueDate\t\tPriority\tStatus\t\tCreatedAt"
-    //printfn "  \t           \t\t\t\t       \t\t        \t       \t\t        "
-    // Print the header
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
     printfn "| ID | Description                                    | Due Date   | Priority | Status      | Created At |"
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
 
 
     let today = DateTime.Now.Date
-    let nearingDeadlineThreshold = today.AddDays(3.0) // Define the threshold for tasks nearing deadlines
+    let nearingDeadlineThreshold = today.AddDays(3.0)
 
     results |> List.iter (fun task ->
         // Change color based on task's deadline status
@@ -38,6 +35,7 @@ let Print results =
     Console.ForegroundColor <- ConsoleColor.White // Reset color to default
     // Print the footer
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
+
     // Add legend for color meanings inside a box
     printfn "\n\n+------------------------------------+"
     printfn "|            Color Legend            |"
