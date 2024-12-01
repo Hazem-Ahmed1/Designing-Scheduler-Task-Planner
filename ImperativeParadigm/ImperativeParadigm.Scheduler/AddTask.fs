@@ -2,10 +2,11 @@
 open System
 open Microsoft.Data.SqlClient
 open Config
+open System.Threading
 
 let insertTask description dueDate priority  =
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
+        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
 
         let query = "INSERT INTO Tasks ([Description], DueDate, [Priority]) VALUES (@Description, @DueDate, @Priority);"
 
@@ -19,6 +20,8 @@ let insertTask description dueDate priority  =
 
         let rowsAffected = command.ExecuteNonQuery()
         printfn "%d row(s) inserted." rowsAffected
+        Thread.Sleep(2500)
+        Console.Clear()
      with
         | ex -> printfn "Error: %s" ex.Message
 
@@ -37,10 +40,10 @@ let getUserInputAndInsertTask () =
     let priority = Int32.Parse(priorityInput)
 
     let sts = "Pending"
-    printf "All The Tasks Inserted is Marked as "
-    System.Console.ForegroundColor <- System.ConsoleColor.Green
+    printf "\nAll The Tasks Inserted is Marked as "
+    Console.ForegroundColor <- System.ConsoleColor.Green
     printfn "%s initially" sts
-    System.Console.ResetColor()
+    Console.ResetColor()
 
 
     // Insert the task into the database

@@ -3,10 +3,11 @@
 open System
 open Microsoft.Data.SqlClient
 open Config
+open System.Threading
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
+        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
 
         let query = "UPDATE Tasks
                  SET Description = @Description,
@@ -27,6 +28,8 @@ let updateTask taskId newDescription newDueDate newPriority newStatus =
 
         let rowsAffected = command.ExecuteNonQuery()
         printfn "%d row(s) updated." rowsAffected
+        Thread.Sleep(1500)
+        Console.Clear()
 
      with
         | ex -> printfn "Error: %s" ex.Message

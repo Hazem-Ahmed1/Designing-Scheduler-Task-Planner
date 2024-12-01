@@ -31,7 +31,10 @@ let filterTasksImperative (tasks: Task list) status priority dueDate =
 
 
 let getUserInputAndFilterTasksImpartive () =
-    printf "Enter status (or leave blank to skip): "
+    // Retrieve Tasks From Database
+    let data = RetriveTasks.showTasks()
+
+    printf "Enter status Pending, Completed or Overdue (or leave blank to skip): "
     let status = Console.ReadLine()
 
     printf "Enter priority (Enter Valid Number or 0 to skip): "
@@ -47,7 +50,6 @@ let getUserInputAndFilterTasksImpartive () =
             printfn "NO FILTER USING DATE"
             DateTime.MinValue
 
-    let data = RetriveTasks.showTasks()
 
     // Filter and display tasks
     filterTasksImperative data status priority dueDate
