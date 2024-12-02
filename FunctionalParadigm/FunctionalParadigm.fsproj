@@ -6,10 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Task.fs" />
+	<Compile Include="Task.fs" />
     <Compile Include="IOManager.fs" />
     <Compile Include="Utilities.fs" />
-    <Compile Include="TaskManager.fs" />
+	<Compile Include="TaskManager.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
