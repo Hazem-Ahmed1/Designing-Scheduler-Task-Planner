@@ -7,6 +7,22 @@ open Utilities
 
 module TaskManager =
 
+    let rec merge (left: Task list) (right: Task list) (compare: Task -> Task -> bool) : Task list =
+        match left, right with
+        | [], ys -> ys
+        | xs, [] -> xs
+        | x :: xs, y :: ys when compare x y -> x :: merge xs right compare
+        | x :: xs, y :: ys -> y :: merge left ys compare
+
+    let rec mergeSort (tasks: Task list) (compare: Task -> Task -> bool) : Task list =
+        match tasks with
+        | [] | [_] -> tasks
+        | _ ->
+            let middle = List.length tasks / 2
+            let left = tasks |> List.take middle
+            let right = tasks |> List.skip middle
+            merge (mergeSort left compare) (mergeSort right compare) compare
+
     let markAsCompleted taskId =
         let tasks = IOManager.loadTasks ()
 
@@ -97,23 +113,43 @@ module TaskManager =
     //         printfn "NO FILTER USING DATE"
     //         DateTime.MinValue
 
-    let sortTasks () = printf "Not yet implemented"
+    let compareByPriority (task1: Task) (task2: Task) =
+        task1.Priority <= task2.Priority
 
-    let rec merge (left: Task list) (right: Task list) : Task list =
-        match left, right with
-        | [], ys -> ys
-        | xs, [] -> xs
-        | x :: xs, y :: ys when x.Priority <= y.Priority -> x :: merge xs right
-        | x :: xs, y :: ys -> y :: merge left ys
+    let compareByDueDate (task1: Task) (task2: Task) = 
+        task1.DueDate <= task2.DueDate
 
+    let compareByCreatedTime (task1: Task) (task2: Task) = 
+        task1.CreatedAt<= task2.CreatedAt
 
-    let rec mergeSort (tasks: Task List) =
-        match tasks with
-        | []
-        | [ _ ] -> tasks
+    let sortTasks () =
+        
+        printfn "Please select a column to sort by"
+        printfn "1. Priority"
+        printfn "2. DueDate"
+        printfn "3. Created Time"
+        match Console.ReadLine() with
+        |   "1" -> 
+            let tasks = IOManager.loadTasks ()
+            let sorterList = mergeSort tasks compareByPriority
+            iter2 sorterList printTask
+        |   "2" ->
+            let tasks = IOManager.loadTasks ()
+            let sorterList = mergeSort tasks compareByDueDate
+            iter2 sorterList printTask
+        |   "3" ->
+            let tasks = IOManager.loadTasks ()
+            let sorterList = mergeSort tasks compareByCreatedTime
+            iter2 sorterList printTask
         | _ ->
-            let mutable middle = len2 tasks 0
-            middle <- middle / 2
-            let left = tasks |> List.take middle
-            let right = tasks |> List.skip middle
-            merge (mergeSort left) (mergeSort right)
+            Console.Clear()
+            printfn "Invalid option, try again."
+
+
+
+
+
+    
+
+
+
