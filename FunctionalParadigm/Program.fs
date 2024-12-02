@@ -69,7 +69,13 @@ let filterTasks () =
 //         printfn "NO FILTER USING DATE"
 //         DateTime.MinValue
 
-let sortTasks () = printf "Not yet implemented"
+let sortTasks () = 
+    
+    let tasks = IOManager.loadTasks ()
+
+    let sortedTasks = TaskManager.mergeSort tasks
+
+    iter2 sortedTasks printTask
 
 [<EntryPoint>]
 let main (_: string array) : int =

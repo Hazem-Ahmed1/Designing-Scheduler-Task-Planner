@@ -31,17 +31,8 @@ module IOManager =
                                   CreatedAt = reader.GetDateTime(4)
                                   Status = stringToStatus (reader.GetString(5)) }
                     }
-
                 rows
                 |> List.ofSeq
-                |> List.map (fun item ->
-                    { TaskId = item.TaskId
-                      Description = item.Description
-                      DueDate = item.DueDate
-                      Priority = item.Priority
-                      CreatedAt = item.CreatedAt
-                      Status = item.Status })
-
             results
         with ex ->
             printfn "Error: %s" ex.Message
