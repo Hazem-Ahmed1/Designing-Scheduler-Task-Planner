@@ -19,7 +19,15 @@ type TaskDTO =
       Priority: int
       Status: TaskStatus }
 
-let bindTask description dueDate priority status =
+let bindTask taskId description dueDate priority createdAt status =
+    { TaskId = taskId
+      Description = description
+      DueDate = dueDate
+      Priority = priority
+      CreatedAt = createdAt
+      Status = status }
+
+let bindTaskDTO description dueDate priority status =
     { Description = description
       DueDate = dueDate
       Priority = priority
