@@ -1,88 +1,82 @@
 ﻿module IOManager
+
 open Dapper
 open Microsoft.Data.SqlClient
 open Task
-module IOManager = 
 
-    let connectionString = "Data Source=LAPTOP-P0G848B0;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+module IOManager =
+    let connectionString =
+        "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
 
-    let loadTasks() =
+    let loadTasks () =
         System.Console.Clear()
+
         try
             let query = "SELECT * FROM Tasks"
             use connection = new SqlConnection(connectionString)
             connection.Open()
 
             let command = new SqlCommand(query, connection)
-
             use reader = command.ExecuteReader()
 
             let results =
                 let rows =
                     seq {
                         while reader.Read() do
-                            let statusStr = reader.GetString(5)
-                            let status =
-                                match statusStr with
-                                | "Pending" -> Pending
-                                | "Completed" -> Completed
-                                | "Overdue" -> Overdue
-                                | _ -> failwith $"Unknown status: {statusStr}"
-                            yield {
-                                TaskId = reader.GetInt32(0)
-                                Description = reader.GetString(1)
-                                DueDate = reader.GetDateTime(2)
-                                Priority = reader.GetInt32(3)
-                                CreatedAt = reader.GetDateTime(4)
-                                Status = status
-                            }
+                            yield
+                                { TaskId = reader.GetInt32(0)
+                                  Description = reader.GetString(1)
+                                  DueDate = reader.GetDateTime(2)
+                                  Priority = reader.GetInt32(3)
+                                  CreatedAt = reader.GetDateTime(4)
+                                  Status = stringToStatus (reader.GetString(5)) }
                     }
-                rows |> List.ofSeq |> List.map (fun item ->
-                    { 
-                        TaskId = item.TaskId
-                        Description = item.Description
-                        DueDate = item.DueDate
-                        Priority = item.Priority
-                        CreatedAt = item.CreatedAt
-                        Status = item.Status
-                    })
+
+                rows
+                |> List.ofSeq
+                |> List.map (fun item ->
+                    { TaskId = item.TaskId
+                      Description = item.Description
+                      DueDate = item.DueDate
+                      Priority = item.Priority
+                      CreatedAt = item.CreatedAt
+                      Status = item.Status })
+
             results
-        with | ex ->
+        with ex ->
             printfn "Error: %s" ex.Message
             []
 
-            
-        
-     //add a task to the database//
-    let addTaskToDb (task: NewTask) =
+    // add a task to the database
+    let addTaskToDb (task: TaskDTO) =
         use connection = new SqlConnection(connectionString)
         connection.Open()
-        let sql = "INSERT INTO Tasks (Description, DueDate, Priority) VALUES (@Description, @DueDate, @Priority)"
+
+        let sql =
+            "INSERT INTO Tasks (Description, DueDate, Priority) VALUES (@Description, @DueDate, @Priority)"
+
         connection.Execute(sql, task) |> ignore
 
     // update a task in the database
     let updatetaskindb (task: Task) =
         use connection = new SqlConnection(connectionString)
         connection.Open()
-        let sql = "update tasks set description = @description, duedate = @duedate, priority = @priority, status = @status where Task_ID = @taskid"
-        let status = 
-            match task.Status with
-            | Pending -> "Pending"
-            | Completed -> "Completed"
-            | Overdue -> "Overdue"
-        connection.Execute(sql, {| 
-            TaskId = task.TaskId
-            Description = task.Description
-            DueDate = task.DueDate
-            Priority = task.Priority
-            Status = status
-        |}) |> ignore
+
+        let sql =
+            "update tasks set description = @description, duedate = @duedate, priority = @priority, status = @status where Task_ID = @taskid"
+
+        connection.Execute(
+            sql,
+            {| TaskId = task.TaskId
+               Description = task.Description
+               DueDate = task.DueDate
+               Priority = task.Priority
+               Status = statusToString task.Status |}
+        )
+        |> ignore
 
     let deletetaskfromdb taskid =
         use connection = new SqlConnection(connectionString)
         connection.Open()
         let sql = "delete from tasks where Task_ID = @taskid"
         connection.Execute(sql, box {| taskid = taskid |}) |> ignore
-
-
-
