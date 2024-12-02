@@ -4,6 +4,8 @@ open System
 open Microsoft.Data.SqlClient
 open Config
 open System.Threading
+open System.Windows.Forms
+open System.Drawing
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
      try
@@ -58,3 +60,64 @@ let getUserInputAndUpdateTask () =
 
     // Update the task in the database
     updateTask taskId newDescription newDueDate newPriority newStatus
+
+// Create the Update Task Form
+let createUpdateTaskForm () =
+    let updateTaskForm = new Form(Text = "Update Task", Width = 600, Height = 380)
+    updateTaskForm.BackColor <- Color.White
+
+    // Title Label
+    let titleLabel = new Label(Text = "Update Task", Font = new Font("Arial", 16.0f, FontStyle.Bold),
+                               AutoSize = true, ForeColor = Color.RoyalBlue, Location = Point(230, 20))
+
+    // Task ID
+    let idLabel = new Label(Text = "Enter Task ID to update: ", Location = Point(30, 70), AutoSize = true)
+    let idTextBox = new TextBox(Width = 300, Location = Point(200, 65))
+
+    // Task Description
+    let taskLabel = new Label(Text = "Enter new task description:", Location = Point(30, 110), AutoSize = true)
+    let taskTextBox = new TextBox(Width = 300, Location = Point(200, 105))
+
+    // Due Date
+    let dateLabel = new Label(Text = "Enter new due date: ", Location = Point(30, 150), AutoSize = true)
+    let dateTextBox = new TextBox(Width = 300, Location = Point(200, 145))
+
+    // Priority
+    let priorityLabel = new Label(Text = "Enter new priority: ", Location = Point(30, 190), AutoSize = true)
+    let priorityTextBox = new TextBox(Width = 300, Location = Point(200, 185))
+
+    // Status
+    let statusLabel = new Label(Text = "Enter new status (Pending, Completed, Overdue): ", Location = Point(30, 230), AutoSize = true)
+    let statusTextBox = new TextBox(Width = 200, Location = Point(300, 225))
+
+    // Save Button
+    let saveButton = new Button(Text = "Save", BackColor = Color.RoyalBlue, ForeColor = Color.White,
+                               Font = new Font("Arial", 12.0f, FontStyle.Bold),
+                               Width = 100, Height = 40, Location = Point(250, 285))
+
+    saveButton.Click.Add(fun _ ->
+            try
+                let id = Int32.Parse idTextBox.Text
+                let description = taskTextBox.Text
+                let dueDate = System.DateTime.TryParse(dateTextBox.Text)
+                let priority = Int32.Parse priorityTextBox.Text
+                let status = statusTextBox.Text
+                updateTask id description dueDate priority status
+                MessageBox.Show("Task Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)  |> ignore
+
+                // Clear inputs
+                idTextBox.Clear()
+                taskTextBox.Clear()
+                dateTextBox.Clear()
+                priorityTextBox.Clear()
+                statusTextBox.Clear()
+
+            with
+            | ex -> MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) |> ignore
+        )
+
+    // Add Controls to the Update Task Form
+    updateTaskForm.Controls.AddRange([| titleLabel; taskLabel; idLabel; idTextBox; taskTextBox; dateLabel; dateTextBox;
+                                      priorityLabel; priorityTextBox; statusLabel; statusTextBox; saveButton |])
+
+    updateTaskForm
