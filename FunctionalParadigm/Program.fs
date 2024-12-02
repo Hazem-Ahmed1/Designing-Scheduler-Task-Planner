@@ -1,6 +1,7 @@
 ﻿open System
-open TaskManager
 open IOManager
+open Task
+open TaskManager
 
 [<EntryPoint>]
 let main (_: string array): int =
@@ -20,38 +21,54 @@ let main (_: string array): int =
             let dueDate = DateTime.Parse(Console.ReadLine())
             printfn "Enter priority (1-5): "
             let priority = Int32.Parse(Console.ReadLine())
-            let newTask = TaskManager.addTask description dueDate priority
+            let Status = Task.Pending
+            let newTask = TaskManager.addTask description dueDate priority Status
             IOManager.addTaskToDb newTask
             printfn "Task added."
             loop () // Tail recursion for repeating the menu
         | "2" ->
             let tasks = IOManager.loadTasks()
             tasks |> List.iter (fun t ->
-                let statusStr = 
-                    match t.Status with
-                    | Task.Pending -> "Pending"
-                    | Task.Completed -> "Completed"
-                    | Task.Overdue -> "Overdue"
-                printfn "%d: %s - %A - %s" t.TaskId t.Description t.DueDate statusStr)
+                printfn "%d: %s - %A - %A" t.TaskId t.Description t.DueDate t.Status)
             loop ()
         | "3" ->
             printfn "Enter task ID to mark as completed: "
             let taskId = Int32.Parse(Console.ReadLine())
-            let tasks = IOManager.loadTasks()
-            match tasks |> List.tryFind (fun t -> t.TaskId = taskId) with
-            | Some task ->
-                let updatedTask = TaskManager.markCompleted task
-                IOManager.updateTaskInDb updatedTask
-                printfn "Task marked as completed."
-            | None -> printfn "Task not found."
+            let result = TaskManager.markCompleted taskId
+            printf "%s" result
             loop ()
         | "4" ->
             printfn "Enter task ID to delete: "
             let taskId = Int32.Parse(Console.ReadLine())
-            IOManager.deleteTaskFromDb taskId
+            IOManager.deletetaskfromdb taskId
             printfn "Task deleted."
             loop ()
-        | "5" -> 
+        | "5" ->
+            printfn "Filtering Tasks: "
+            let tasks = IOManager.loadTasks()
+            printf "Enter status Pending, Completed or Overdue (or leave blank to skip): "
+            let status = Console.ReadLine()
+            printf "Enter priority (Enter Valid Number or 0 to skip): "
+            let priorityInput = Console.ReadLine()
+            let priority = if String.IsNullOrWhiteSpace(priorityInput) then 0 else Int32.Parse(priorityInput)
+            printf "Enter Specific due date (yyyy-MM-dd, or leave blank to skip): "
+            let dueDateInput = Console.ReadLine()
+            let dueDate =
+                match DateTime.TryParse(dueDateInput) with
+                | (true, parsedDate) -> parsedDate
+                | (false, _) ->
+                    printfn "NO FILTER USING DATE"
+                    DateTime.MinValue
+
+
+            loop ()
+        | "6" ->
+            printfn "Enter task ID to delete: "
+            let taskId = Int32.Parse(Console.ReadLine())
+            IOManager.deletetaskfromdb taskId
+            printfn "Task deleted."
+            loop ()
+        | "7" -> 
             printfn "Exiting..."
         | _ -> 
             printfn "Invalid option, try again."

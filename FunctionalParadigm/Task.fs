@@ -11,5 +11,13 @@ type Task = {
     Description: string
     DueDate: System.DateTime
     Priority: int
-    Status: TaskStatus
+    CreatedAt: System.DateTime
+    Status: TaskStatus 
+}
+
+type NewTask = {
+    Description: string
+    DueDate: System.DateTime
+    Priority: int
+    Status: TaskStatus 
 }
