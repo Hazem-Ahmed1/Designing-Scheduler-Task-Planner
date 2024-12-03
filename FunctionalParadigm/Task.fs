@@ -1,5 +1,7 @@
 ﻿module Task
 
+open Utilities
+
 type TaskStatus =
     | Pending
     | Completed
@@ -56,26 +58,18 @@ let printTask (t: Task) =
         ((statusToString t.Status).PadRight(8))
         (t.CreatedAt.ToString("yyyy/MM/dd"))
 
-let printTasks lst f =
+let printTasks lst =
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
 
     printfn "| ID | Description                                    | Due Date   | Priority | Status      | Created At |"
 
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
 
-    f lst printTask
+    iter2 lst printTask
 
     printfn "+----+------------------------------------------------+------------+----------+-------------+------------+"
 
     printfn "\nPress ESC to go back."
-
-    let rec waitForEsc () =
-        let key = System.Console.ReadKey(true).Key
-
-        if key = System.ConsoleKey.Escape then
-            System.Console.Clear()
-        else
-            waitForEsc ()
 
     waitForEsc ()
 
@@ -90,3 +84,7 @@ let filterByStatus (task: Task) cond = task.Status = cond
 let filterByPriority (task: Task) cond = task.Priority = cond
 
 let filterByDueDate (task: Task) (cond: System.DateTime) = task.DueDate.Date = cond.Date
+
+let filterByDeadline (task: Task) (cond: System.DateTime) = task.DueDate.Date <= cond.Date
+
+let filterByOverDueDate (task: Task) (cond: System.DateTime) = task.DueDate.Date < cond.Date

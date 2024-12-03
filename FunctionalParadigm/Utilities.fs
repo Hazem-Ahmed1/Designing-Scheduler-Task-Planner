@@ -1,12 +1,14 @@
 ﻿module Utilities
 
-open Task
 open System
 
-let rec len2 lst A : int =
-    match lst with
-    | [] -> A
-    | _ :: xs -> len2 xs A + 1
+let len2 lst =
+    let rec loop lst A : int =
+        match lst with
+        | [] -> A
+        | _ :: xs -> loop xs A + 1
+
+    loop lst 0
 
 let reverse lst =
     let rec loop remaining acc =
@@ -40,9 +42,17 @@ let filter2 lst f cond =
     loop lst []
 
 let dueDateGiven (str: string) : DateTime =
-    let duration = new TimeSpan(3, 0, 0, 0)
-
     if str = "" then
-        DateTime.Now.Add(duration)
+        DateTime.Now.AddDays(3)
     else
         DateTime.Parse(str)
+
+let validDueDate (dueDate: DateTime) = dueDate.Day >= DateTime.Now.Day
+
+let rec waitForEsc () =
+    let key = Console.ReadKey(true).Key
+
+    if key <> ConsoleKey.Escape then
+        waitForEsc ()
+    else
+        Console.Clear()

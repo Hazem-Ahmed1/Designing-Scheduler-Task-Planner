@@ -24,18 +24,18 @@ module TaskManager =
             let right = tasks |> List.skip middle
             merge (mergeSort left compare) (mergeSort right compare) compare
 
-    let markAsCompleted taskId =
+    let updateTaskStatus taskStatus (task: Task) = { task with Status = taskStatus }
+
+    let updateTaskStatusById taskId taskStatus =
         let tasks = IOManager.loadTasks ()
 
         match tasks |> List.tryFind (fun t -> t.TaskId = taskId) with
         | Some task ->
-            let updatedTask = { task with Status = Completed }
-
-            IOManager.updatetaskindb updatedTask
+            IOManager.updatetaskindb (updateTaskStatus taskStatus task)
             printfn "Task marked as completed."
         | None -> printfn "Task not found."
 
-    let changePriority taskId priority =
+    let updatePriorityById taskId priority =
         let tasks = IOManager.loadTasks ()
 
         match tasks |> List.tryFind (fun t -> t.TaskId = taskId) with
@@ -48,23 +48,38 @@ module TaskManager =
 
     let addTask () =
         printfn "Add Task"
-        printf "Enter task description: "
-        let description = Console.ReadLine()
-        printf "Enter due date (YYYY-MM-DD), Default is +3 days: "
-        let dueDate = dueDateGiven (Console.ReadLine())
-        printf "Enter priority (1-5), Lower is higher: "
-        let priority = Int32.Parse(Console.ReadLine())
-        let Status = Pending
-        let newTask = bindTaskDTO description dueDate priority Status
-        IOManager.addTaskToDb newTask
-        Console.Clear()
-        printfn "Task added successfully."
+
+        try
+            printf "Enter task description: "
+            let description = Console.ReadLine()
+            printf "Enter due date (YYYY-MM-DD), Default is +3 days: "
+            let dueDate = dueDateGiven (Console.ReadLine())
+
+            if validDueDate (dueDate) then
+                printf "Enter priority (1-5), Lower is higher: "
+                let priority = Int32.Parse(Console.ReadLine())
+
+                if priority <= 5 && priority >= 1 then
+                    let Status = Pending
+                    let newTask = bindTaskDTO description dueDate priority Status
+                    IOManager.addTaskToDb newTask
+                    Console.Clear()
+                    printfn "Task added successfully."
+                else
+                    Console.Clear()
+                    printfn "Invalid priority."
+            else
+                Console.Clear()
+                printfn "Invalid due date."
+        with _ ->
+            Console.Clear()
+            printfn "Invalid Data."
 
     let viewTasks () =
         printfn "View Tasks"
         let tasks = IOManager.loadTasks ()
 
-        printTasks tasks iter2
+        printTasks tasks
 
     let updateTask () =
         printfn "Update Task"
@@ -76,11 +91,11 @@ module TaskManager =
         printf "Choose an option: "
 
         match Console.ReadLine() with
-        | "1" -> markAsCompleted taskId
+        | "1" -> updateTaskStatusById taskId Completed
         | "2" ->
             printf "Enter updated priority (1-5): "
             let newPriority = Int32.Parse(Console.ReadLine())
-            changePriority taskId newPriority
+            updatePriorityById taskId newPriority
         | _ ->
             printfn "Invalid option"
             Console.Clear()
@@ -112,15 +127,15 @@ module TaskManager =
             | "1" ->
                 let tasks = IOManager.loadTasks ()
                 let filteredList = filter2 tasks filterByStatus Pending
-                printTasks filteredList iter2
+                printTasks filteredList
             | "2" ->
                 let tasks = IOManager.loadTasks ()
                 let filteredList = filter2 tasks filterByStatus Completed
-                printTasks filteredList iter2
+                printTasks filteredList
             | "3" ->
                 let tasks = IOManager.loadTasks ()
                 let filteredList = filter2 tasks filterByStatus Overdue
-                printTasks filteredList iter2
+                printTasks filteredList
             | _ ->
                 Console.Clear()
                 printfn "Invalid option."
@@ -132,11 +147,11 @@ module TaskManager =
 
             if priority > 5 || priority < 1 then
                 Console.Clear()
-                printfn "Invalid option."
+                printfn "Invalid priority."
             else
                 let tasks = IOManager.loadTasks ()
                 let filteredList = filter2 tasks filterByPriority priority
-                printTasks filteredList iter2
+                printTasks filteredList
         | "3" ->
             Console.Clear()
             printf "Enter Date (YYYY-MM-DD): "
@@ -145,7 +160,7 @@ module TaskManager =
                 let dueDate = DateTime.Parse(Console.ReadLine())
                 let tasks = IOManager.loadTasks ()
                 let filteredList = filter2 tasks filterByDueDate dueDate
-                printTasks filteredList iter2
+                printTasks filteredList
             with _ ->
                 Console.Clear()
                 printfn "Invalid Date."
@@ -164,15 +179,37 @@ module TaskManager =
         | "1" ->
             let tasks = IOManager.loadTasks ()
             let sortedList = mergeSort tasks compareByPriority
-            printTasks sortedList iter2
+            printTasks sortedList
         | "2" ->
             let tasks = IOManager.loadTasks ()
             let sortedList = mergeSort tasks compareByDueDate
-            printTasks sortedList iter2
+            printTasks sortedList
         | "3" ->
             let tasks = IOManager.loadTasks ()
             let sortedList = mergeSort tasks compareByCreatedTime
-            printTasks sortedList iter2
+            printTasks sortedList
         | _ ->
             Console.Clear()
             printfn "Invalid option."
+
+    let checkOverdue () =
+        let tasks = IOManager.loadTasks ()
+        let filteredList = filter2 tasks filterByOverDueDate DateTime.Now
+        let overdueList = map2 filteredList (updateTaskStatus Overdue)
+
+        if len2 overdueList = 0 then
+            printf "No Tasks nearing deadline"
+        else
+            printfn "Overdue tasks:"
+            printTasks overdueList
+
+    let closeDeadline () =
+        let tasks = IOManager.loadTasks ()
+        let filteredList = filter2 tasks filterByDeadline (DateTime.Now.AddDays(1))
+        let pendingList = filter2 filteredList filterByStatus Pending
+
+        if len2 pendingList = 0 then
+            printfn "No Tasks nearing deadline"
+        else
+            printfn "Overdue In a Day..."
+            printTasks pendingList

@@ -3,6 +3,9 @@ open TaskManager
 
 [<EntryPoint>]
 let main (_: string array) : int =
+    TaskManager.checkOverdue ()
+    TaskManager.closeDeadline ()
+
     let rec loop () : unit =
         printfn "Task Scheduler"
         printfn "1. Add Task"
