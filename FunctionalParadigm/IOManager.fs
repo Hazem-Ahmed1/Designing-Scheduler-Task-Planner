@@ -3,6 +3,7 @@
 open Dapper
 open Microsoft.Data.SqlClient
 open Task
+open Utilities
 
 module IOManager =
     let connectionString =
@@ -31,16 +32,9 @@ module IOManager =
                                   CreatedAt = reader.GetDateTime(4)
                                   Status = stringToStatus (reader.GetString(5)) }
                     }
+                    |> List.ofSeq
 
                 rows
-                |> List.ofSeq
-                |> List.map (fun item ->
-                    { TaskId = item.TaskId
-                      Description = item.Description
-                      DueDate = item.DueDate
-                      Priority = item.Priority
-                      CreatedAt = item.CreatedAt
-                      Status = item.Status })
 
             results
         with ex ->

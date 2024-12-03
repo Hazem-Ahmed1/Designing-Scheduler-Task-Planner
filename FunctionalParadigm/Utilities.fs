@@ -1,7 +1,22 @@
 ﻿module Utilities
 
-open Task
 open System
+
+let len2 lst =
+    let rec loop lst A : int =
+        match lst with
+        | [] -> A
+        | _ :: xs -> loop xs A + 1
+
+    loop lst 0
+
+let reverse lst =
+    let rec loop remaining acc =
+        match remaining with
+        | [] -> acc
+        | x :: xs -> loop xs (x :: acc)
+
+    loop lst []
 
 let rec iter2 lst f =
     match lst with
@@ -10,22 +25,34 @@ let rec iter2 lst f =
         f x
         iter2 xs f
 
-let rec len2 lst A : int =
-    match lst with
-    | [] -> A
-    | x :: xs -> len2 xs A + 1
+let map2 lst f =
+    let rec loop lst res =
+        match lst with
+        | [] -> reverse res
+        | x :: xs -> loop xs (f x :: res)
 
-// Function to filter a list
-let filter pred lst =
-    List.foldBack (fun x acc -> if pred x then x :: acc else acc) lst []
+    loop lst []
 
-// Function to sort tasks by due date
-let sortByDueDate tasks = List.sortBy (fun t -> t.DueDate) tasks
+let filter2 lst f cond =
+    let rec loop lst res =
+        match lst with
+        | [] -> reverse res
+        | x :: xs -> if f x cond then loop xs (x :: res) else loop xs res
+
+    loop lst []
 
 let dueDateGiven (str: string) : DateTime =
-    let duration = new TimeSpan(3, 0, 0, 0)
-
     if str = "" then
-        DateTime.Now.Add(duration)
+        DateTime.Now.AddDays(3)
     else
         DateTime.Parse(str)
+
+let validDueDate (dueDate: DateTime) = dueDate.Day >= DateTime.Now.Day
+
+let rec waitForEsc () =
+    let key = Console.ReadKey(true).Key
+
+    if key <> ConsoleKey.Escape then
+        waitForEsc ()
+    else
+        Console.Clear()
