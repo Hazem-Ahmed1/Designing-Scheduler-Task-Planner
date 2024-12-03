@@ -9,7 +9,7 @@ let main (_: string array) : int =
         printfn "2. View Tasks"
         printfn "3. Update Task"
         printfn "4. Delete Task"
-        printfn "5. Filtering Tasks"
+        printfn "5. Filter Tasks"
         printfn "6. Sort Tasks"
         printfn "7. Exit"
         printf "Choose an option: "

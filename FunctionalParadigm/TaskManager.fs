@@ -11,12 +11,13 @@ module TaskManager =
         match left, right with
         | [], ys -> ys
         | xs, [] -> xs
-        | x :: xs, y :: ys when compare x y -> x :: merge xs right compare
-        | x :: xs, y :: ys -> y :: merge left ys compare
+        | x :: xs, y :: _ when compare x y -> x :: merge xs right compare
+        | _ :: _, y :: ys -> y :: merge left ys compare
 
     let rec mergeSort (tasks: Task list) (compare: Task -> Task -> bool) : Task list =
         match tasks with
-        | [] | [_] -> tasks
+        | []
+        | [ _ ] -> tasks
         | _ ->
             let middle = List.length tasks / 2
             let left = tasks |> List.take middle
@@ -46,11 +47,12 @@ module TaskManager =
         | None -> printfn "Task not found."
 
     let addTask () =
+        printfn "Add Task"
         printf "Enter task description: "
         let description = Console.ReadLine()
-        printf "Enter due date (YYYY-MM-DD): Default (3 days from now)"
+        printf "Enter due date (YYYY-MM-DD), Default is +3 days: "
         let dueDate = dueDateGiven (Console.ReadLine())
-        printf "Enter priority (1-5): (Lower is higher)"
+        printf "Enter priority (1-5), Lower is higher: "
         let priority = Int32.Parse(Console.ReadLine())
         let Status = Pending
         let newTask = bindTaskDTO description dueDate priority Status
@@ -59,9 +61,10 @@ module TaskManager =
         printfn "Task added successfully."
 
     let viewTasks () =
+        printfn "View Tasks"
         let tasks = IOManager.loadTasks ()
 
-        iter2 tasks printTask
+        printTasks tasks iter2
 
     let updateTask () =
         printfn "Update Task"
@@ -83,6 +86,7 @@ module TaskManager =
             Console.Clear()
 
     let deleteTask () =
+        printfn "Delete Task"
         printf "Enter task ID to delete: "
         let taskId = Int32.Parse(Console.ReadLine())
         IOManager.deletetaskfromdb taskId
@@ -90,66 +94,85 @@ module TaskManager =
         printfn "Task deleted successfully."
 
     let filterTasks () =
-        printfn "Filtering Tasks: "
-        let tasks = IOManager.loadTasks ()
-        printf "Enter status Pending, Completed or Overdue (or leave blank to skip): "
-        let status = Console.ReadLine()
-        printf "Enter priority (Enter Valid Number or 0 to skip): "
-        let priorityInput = Console.ReadLine()
+        printfn "Filter Tasks"
+        printfn "Please select a column to filter by"
+        printfn "1. Status"
+        printfn "2. Priority"
+        printfn "3. Due date"
 
-        let priority =
-            if String.IsNullOrWhiteSpace(priorityInput) then
-                0
-            else
-                Int32.Parse(priorityInput)
-
-        printf "Enter Specific due date (yyyy-MM-dd, or leave blank to skip): "
-    // let dueDateInput = Console.ReadLine()
-
-    // let dueDate =
-    //     match DateTime.TryParse(dueDateInput) with
-    //     | (true, parsedDate) -> parsedDate
-    //     | (false, _) ->
-    //         printfn "NO FILTER USING DATE"
-    //         DateTime.MinValue
-
-    let compareByPriority (task1: Task) (task2: Task) =
-        task1.Priority <= task2.Priority
-
-    let compareByDueDate (task1: Task) (task2: Task) = 
-        task1.DueDate <= task2.DueDate
-
-    let compareByCreatedTime (task1: Task) (task2: Task) = 
-        task1.CreatedAt<= task2.CreatedAt
-
-    let sortTasks () =
-        
-        printfn "Please select a column to sort by"
-        printfn "1. Priority"
-        printfn "2. DueDate"
-        printfn "3. Created Time"
         match Console.ReadLine() with
-        |   "1" -> 
-            let tasks = IOManager.loadTasks ()
-            let sorterList = mergeSort tasks compareByPriority
-            iter2 sorterList printTask
-        |   "2" ->
-            let tasks = IOManager.loadTasks ()
-            let sorterList = mergeSort tasks compareByDueDate
-            iter2 sorterList printTask
-        |   "3" ->
-            let tasks = IOManager.loadTasks ()
-            let sorterList = mergeSort tasks compareByCreatedTime
-            iter2 sorterList printTask
+        | "1" ->
+            Console.Clear()
+            printfn "Choose status:"
+            printfn "1. Pending"
+            printfn "2. Completed"
+            printfn "3. Overdue"
+
+            match Console.ReadLine() with
+            | "1" ->
+                let tasks = IOManager.loadTasks ()
+                let filteredList = filter2 tasks filterByStatus Pending
+                printTasks filteredList iter2
+            | "2" ->
+                let tasks = IOManager.loadTasks ()
+                let filteredList = filter2 tasks filterByStatus Completed
+                printTasks filteredList iter2
+            | "3" ->
+                let tasks = IOManager.loadTasks ()
+                let filteredList = filter2 tasks filterByStatus Overdue
+                printTasks filteredList iter2
+            | _ ->
+                Console.Clear()
+                printfn "Invalid option."
+        | "2" ->
+            Console.Clear()
+            printf "Enter priority (1-5): "
+
+            let priority = Int32.Parse(Console.ReadLine())
+
+            if priority > 5 || priority < 1 then
+                Console.Clear()
+                printfn "Invalid option."
+            else
+                let tasks = IOManager.loadTasks ()
+                let filteredList = filter2 tasks filterByPriority priority
+                printTasks filteredList iter2
+        | "3" ->
+            Console.Clear()
+            printf "Enter Date (YYYY-MM-DD): "
+
+            try
+                let dueDate = DateTime.Parse(Console.ReadLine())
+                let tasks = IOManager.loadTasks ()
+                let filteredList = filter2 tasks filterByDueDate dueDate
+                printTasks filteredList iter2
+            with _ ->
+                Console.Clear()
+                printfn "Invalid Date."
         | _ ->
             Console.Clear()
-            printfn "Invalid option, try again."
+            printfn "Invalid option."
 
+    let sortTasks () =
+        printfn "Sort Tasks"
+        printfn "Please select a column to sort by"
+        printfn "1. Priority"
+        printfn "2. Due date"
+        printfn "3. Creation time"
 
-
-
-
-    
-
-
-
+        match Console.ReadLine() with
+        | "1" ->
+            let tasks = IOManager.loadTasks ()
+            let sortedList = mergeSort tasks compareByPriority
+            printTasks sortedList iter2
+        | "2" ->
+            let tasks = IOManager.loadTasks ()
+            let sortedList = mergeSort tasks compareByDueDate
+            printTasks sortedList iter2
+        | "3" ->
+            let tasks = IOManager.loadTasks ()
+            let sortedList = mergeSort tasks compareByCreatedTime
+            printTasks sortedList iter2
+        | _ ->
+            Console.Clear()
+            printfn "Invalid option."

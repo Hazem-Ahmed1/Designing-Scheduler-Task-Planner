@@ -31,12 +31,13 @@ let map2 lst f =
 
     loop lst []
 
-// Function to filter a list
-let filter pred lst =
-    List.foldBack (fun x acc -> if pred x then x :: acc else acc) lst []
+let filter2 lst f cond =
+    let rec loop lst res =
+        match lst with
+        | [] -> reverse res
+        | x :: xs -> if f x cond then loop xs (x :: res) else loop xs res
 
-// Function to sort tasks by due date
-let sortByDueDate tasks = List.sortBy (fun t -> t.DueDate) tasks
+    loop lst []
 
 let dueDateGiven (str: string) : DateTime =
     let duration = new TimeSpan(3, 0, 0, 0)
