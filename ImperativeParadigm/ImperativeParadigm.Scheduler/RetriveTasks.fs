@@ -11,7 +11,7 @@ let showTasks() =
 
     //System.Console.Clear()
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
         let query = "SELECT * FROM Tasks"
         use connection = new SqlConnection(connectionString)
         connection.Open()
@@ -57,7 +57,8 @@ let createDisplayForm () =
     taskGridView.RowHeadersVisible <- false
 
     // Define columns
-    taskGridView.Columns.Add("Id", "Id") |> ignore
+    taskGridView.Columns.Clear()
+    taskGridView.Columns.Add("TaskID", "TaskID") |> ignore
     taskGridView.Columns.Add("Description", "Description") |> ignore
     taskGridView.Columns.Add("DueDate", "Due Date") |> ignore
     taskGridView.Columns.Add("Priority", "Priority") |> ignore
@@ -71,20 +72,31 @@ let createDisplayForm () =
     // Load tasks
     let tasks = showTasks()
     tasks |> List.iter (fun task ->
-        taskGridView.Rows.Add([| task.TaskID.ToString()
-                                 task.Description
-                                 task.DueDate.ToString("yyyy/MM/dd")
-                                 task.Priority.ToString()
-                                 task.CreatedAt.ToString("yyyy/MM/dd")
-                                 task.Status |]) |> ignore
+        // Explicitly box all properties before adding to the grid
+        let rowValues = 
+            [| 
+                box task.TaskID
+                box task.Description
+                box (task.DueDate.ToString("yyyy/MM/dd"))
+                box task.Priority
+                box (task.CreatedAt.ToString("yyyy/MM/dd"))
+                box task.Status
+            |]
+        taskGridView.Rows.Add(rowValues) |> ignore
     )
 
     // Event handler for CellFormatting to change row colors
     taskGridView.CellFormatting.Add(fun args ->
-        if args.RowIndex >= 0 then
+        if args.RowIndex >= 0 && args.RowIndex < taskGridView.Rows.Count then
             let row = taskGridView.Rows.[args.RowIndex]
-            let status = row.Cells.[5].Value.ToString()
-            let dueDate = DateTime.Parse(row.Cells.[2].Value.ToString())
+            let status = 
+                match row.Cells.[5].Value with
+                | null -> ""
+                | value -> value.ToString()
+            let dueDate =
+                match row.Cells.[2].Value with
+                | null -> DateTime.MaxValue // Assign a maximum date if DueDate is null
+                | value -> DateTime.Parse(value.ToString())
             let today = DateTime.Now.Date
             let nearingDeadlineThreshold = today.AddDays(3.0)
 

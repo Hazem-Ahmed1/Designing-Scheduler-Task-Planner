@@ -8,7 +8,7 @@ open System.Drawing
 
 let insertTask description dueDate priority  =
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
 
         let query = "INSERT INTO Tasks ([Description], DueDate, [Priority]) VALUES (@Description, @DueDate, @Priority);"
 
@@ -80,8 +80,8 @@ let createAddTaskForm () =
     addButton.Click.Add(fun _ ->
             try
                 let description = taskTextBox.Text
-                let dueDate = System.DateTime.TryParse(dateTextBox.Text)
-                let priority = Int32.TryParse priorityTextBox.Text
+                let dueDate = System.DateTime.Parse(dateTextBox.Text)
+                let priority = Int32.Parse priorityTextBox.Text
                 insertTask description dueDate priority 
                 MessageBox.Show("Task Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)  |> ignore
 

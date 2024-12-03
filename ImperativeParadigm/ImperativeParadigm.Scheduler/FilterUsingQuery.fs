@@ -9,7 +9,7 @@ open System.Drawing
 
 let filterTasks status priority dueDate =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
         let query =
                 "SELECT *
                  FROM Tasks
@@ -136,12 +136,16 @@ let createFilterTaskForm () =
 
                 // Add filtered tasks to the DataGridView
                 filteredTasks |> List.iter (fun task ->
-                    taskGridView.Rows.Add([| task.TaskID.ToString()
-                                             task.Description
-                                             task.DueDate.ToString("yyyy/MM/dd")
-                                             task.Priority.ToString()
-                                             task.CreatedAt.ToString("yyyy/MM/dd")
-                                             task.Status |]) |> ignore
+                    let rowValues = 
+                        [| 
+                            box task.TaskID
+                            box task.Description
+                            box (task.DueDate.ToString("yyyy/MM/dd"))
+                            box task.Priority
+                            box (task.CreatedAt.ToString("yyyy/MM/dd"))
+                            box task.Status
+                        |]
+                    taskGridView.Rows.Add(rowValues) |> ignore
                 )
             else
                 MessageBox.Show("No tasks match the filter criteria.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information) |> ignore

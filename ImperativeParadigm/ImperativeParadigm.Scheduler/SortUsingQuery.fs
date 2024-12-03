@@ -9,7 +9,7 @@ open System.Drawing
 
 let SortTasks sortColumn =
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
         let query =
                     "SELECT *
                      FROM Tasks
@@ -115,13 +115,18 @@ let createSortTaskForm () =
                     
                     // Add sorted tasks to the DataGridView
                     sortedTasks |> List.iter (fun task ->
-                        taskGridView.Rows.Add([| task.TaskID.ToString()
-                                                 task.Description
-                                                 task.DueDate.ToString("yyyy/MM/dd")
-                                                 task.Priority.ToString()
-                                                 task.CreatedAt.ToString("yyyy/MM/dd")
-                                                 task.Status |]) |> ignore
+                        let rowValues = 
+                            [| 
+                                box task.TaskID
+                                box task.Description
+                                box (task.DueDate.ToString("yyyy/MM/dd"))
+                                box task.Priority
+                                box (task.CreatedAt.ToString("yyyy/MM/dd"))
+                                box task.Status
+                            |]
+                        taskGridView.Rows.Add(rowValues) |> ignore
                     )
+
                 else
                     MessageBox.Show("No tasks available to sort.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information) |> ignore
         with

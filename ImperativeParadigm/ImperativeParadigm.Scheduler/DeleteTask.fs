@@ -9,7 +9,7 @@ open System.Drawing
 
 let deleteTask taskId =
    try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
 
         let query = "DELETE FROM Tasks WHERE Task_ID = @Task_ID"
 

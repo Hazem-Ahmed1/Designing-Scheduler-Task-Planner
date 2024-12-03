@@ -9,7 +9,7 @@ open System.Drawing
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrFatma")
 
         let query = "UPDATE Tasks
                  SET Description = @Description,
@@ -99,7 +99,7 @@ let createUpdateTaskForm () =
             try
                 let id = Int32.Parse idTextBox.Text
                 let description = taskTextBox.Text
-                let dueDate = System.DateTime.TryParse(dateTextBox.Text)
+                let dueDate = System.DateTime.Parse(dateTextBox.Text)
                 let priority = Int32.Parse priorityTextBox.Text
                 let status = statusTextBox.Text
                 updateTask id description dueDate priority status
