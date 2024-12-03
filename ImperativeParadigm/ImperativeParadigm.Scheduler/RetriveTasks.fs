@@ -41,15 +41,27 @@ let showTasks() =
 
 // Create Display Tasks Form
 let createDisplayForm () =
-    let displayForm = new Form(Text = "Display Task", Width = 800, Height = 350)
+    let displayForm = new Form(Text = "Display Task", Width = 800, Height = 360)
     displayForm.BackColor <- Color.White
 
     // Title Label
     let titleLabel = new Label(Text = "Display all Tasks", Font = new Font("Arial", 16.0f, FontStyle.Bold),
                                AutoSize = true, ForeColor = Color.RoyalBlue, Location = Point(300, 20))
+    //Indicator Labels
+    let CompletedTasksLabel = new Label(Text = "Completed Tasks",AutoSize = true, BackColor = Color.LightGreen,
+                               ForeColor = Color.Black, Location = Point(650, 40))
+
+    let OverdueTasksLabel = new Label(Text = "Overdue Tasks",AutoSize = true, BackColor = Color.LightCoral,
+                               ForeColor = Color.Black, Location = Point(650, 60))
+
+    let NearingDeadlineLabel = new Label(Text = "Nearing Deadline Tasks", AutoSize = true,BackColor = Color.LightYellow, 
+                               ForeColor = Color.Black, Location = Point(650, 80))
+
+    let OnTimeTasksLabel = new Label(Text = "On-time Tasks",AutoSize = true, BackColor = Color.White, 
+                              ForeColor = Color.Black, Location = Point(650, 100))
 
     // DataGridView to display tasks
-    let taskGridView = new DataGridView(Width = 733, Height = 200, Location = Point(20, 80))
+    let taskGridView = new DataGridView(Width = 733, Height = 150, Location = Point(20, 130))
     taskGridView.ColumnHeadersHeightSizeMode <- DataGridViewColumnHeadersHeightSizeMode.AutoSize
     taskGridView.AllowUserToAddRows <- false
     taskGridView.AllowUserToDeleteRows <- false
@@ -110,6 +122,7 @@ let createDisplayForm () =
     
 
     // Add Controls to the Display Tasks Form
-    displayForm.Controls.AddRange([| titleLabel; taskGridView |])
+    displayForm.Controls.AddRange([| titleLabel; taskGridView; CompletedTasksLabel; OverdueTasksLabel;
+    NearingDeadlineLabel; OnTimeTasksLabel|])
 
     displayForm
