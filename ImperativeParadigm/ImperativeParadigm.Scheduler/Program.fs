@@ -18,7 +18,7 @@ let main argv =
 
     // Create the main form
     let homeForm = new Form(Text = "Task Manager", Width = 400, Height = 530)
-    
+
     // Create a reusable function to generate styled buttons
     let createButton (text: string) (x: int) (y: int) =
         new Button(Text = text, Left = x, Top = y, Width = 250, Height = 40,
@@ -64,7 +64,7 @@ let main argv =
         let filterTaskForm = createFilterTaskForm ()
         filterTaskForm.ShowDialog() |> ignore
     )
-   
+
 
     // Add buttons to the form
     homeForm.Controls.AddRange([| titleLabel; displayTasksButton; addTaskButton; deleteTaskButton; updateTaskButton; sortButton; filterButton |])
