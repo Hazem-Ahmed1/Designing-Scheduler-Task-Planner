@@ -143,6 +143,28 @@ let createFilterTaskForm () =
         with
         | ex -> MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) |> ignore
     )
+            // Event handler for CellFormatting to change row colors
+    taskGridView.CellFormatting.Add(fun args ->
+        if args.RowIndex >= 0 && args.RowIndex < taskGridView.Rows.Count then
+            let row = taskGridView.Rows.[args.RowIndex]
+            let status = 
+                match row.Cells.[5].Value with
+                | null -> ""
+                | value -> value.ToString()
+            let dueDate =
+                match row.Cells.[2].Value with
+                | null -> DateTime.MaxValue // Assign a maximum date if DueDate is null
+                | value -> DateTime.Parse(value.ToString())
+            let today = DateTime.Now.Date
+            let nearingDeadlineThreshold = today.AddDays(3.0)
+
+            // Change row background color based on conditions
+            row.DefaultCellStyle.BackColor <- 
+                if status = "Completed" then Color.LightGreen
+                elif dueDate < today then Color.LightCoral
+                elif dueDate <= nearingDeadlineThreshold then Color.LightYellow
+                else Color.White
+    )
 
     // Add controls to the form
     filterTaskForm.Controls.AddRange([| titleLabel; statusLabel; statusComboBox; priorityLabel; priorityTextBox;
