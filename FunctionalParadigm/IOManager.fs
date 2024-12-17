@@ -6,43 +6,41 @@ open Task
 open Utilities
 
 module IOManager =
-    let connectionString =
-        "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
+    let private readerToTask (reader: SqlDataReader) =
+        { TaskId = reader.GetInt32(0)
+          Description = reader.GetString(1)
+          DueDate = reader.GetDateTime(2)
+          Priority = reader.GetInt32(3)
+          CreatedAt = reader.GetDateTime(4)
+          Status = stringToStatus (reader.GetString(5)) }
+
+    let private readAllRows (reader: SqlDataReader) =
+        let rec readRows acc =
+            match reader.Read() with
+            | true -> readRows (readerToTask reader :: acc)
+            | false -> List.rev acc
+        readRows []
 
     let loadTasks () =
+        let connectionString =
+            "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
         System.Console.Clear()
-
         try
-            let query = "SELECT * FROM Tasks"
             use connection = new SqlConnection(connectionString)
             connection.Open()
-
-            let command = new SqlCommand(query, connection)
+            
+            use command = new SqlCommand("SELECT * FROM Tasks", connection)
             use reader = command.ExecuteReader()
-
-            let results =
-                let rows =
-                    seq {
-                        while reader.Read() do
-                            yield
-                                { TaskId = reader.GetInt32(0)
-                                  Description = reader.GetString(1)
-                                  DueDate = reader.GetDateTime(2)
-                                  Priority = reader.GetInt32(3)
-                                  CreatedAt = reader.GetDateTime(4)
-                                  Status = stringToStatus (reader.GetString(5)) }
-                    }
-                    |> List.ofSeq
-
-                rows
-
-            results
+            
+            readAllRows reader
         with ex ->
             printfn "Error: %s" ex.Message
             []
 
     // add a task to the database
     let addTaskToDb (task: TaskDTO) =
+        let connectionString =
+            "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
         use connection = new SqlConnection(connectionString)
         connection.Open()
 
@@ -53,6 +51,9 @@ module IOManager =
 
     // update a task in the database
     let updatetaskindb (task: Task) =
+        let connectionString =
+            "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
+    
         use connection = new SqlConnection(connectionString)
         connection.Open()
 
@@ -70,6 +71,8 @@ module IOManager =
         |> ignore
 
     let deletetaskfromdb taskid =
+        let connectionString =
+            "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
         use connection = new SqlConnection(connectionString)
         connection.Open()
         let sql = "delete from tasks where Task_ID = @taskid"
