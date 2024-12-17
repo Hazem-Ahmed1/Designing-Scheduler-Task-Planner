@@ -9,7 +9,7 @@ open System.Drawing
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
      try
-        let connectionString = GetDataBaseConnection("ConstrFatma")
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
 
         let query = "UPDATE Tasks
                  SET Description = @Description,
@@ -87,8 +87,10 @@ let createUpdateTaskForm () =
     let priorityTextBox = new TextBox(Width = 300, Location = Point(200, 185))
 
     // Status
-    let statusLabel = new Label(Text = "Enter new status (Pending, Completed, Overdue): ", Location = Point(30, 230), AutoSize = true)
-    let statusTextBox = new TextBox(Width = 200, Location = Point(300, 225))
+    let statusLabel = new Label(Text = "Select new status: ", Location = Point(30, 230), AutoSize = true)
+    let statusComboBox = new ComboBox(Width = 300, Location = Point(200, 225))
+    statusComboBox.Items.AddRange([| "Completed"; "Pending"; "Overdue" |]) |> ignore
+    statusComboBox.DropDownStyle <- ComboBoxStyle.DropDownList
 
     // Save Button
     let saveButton = new Button(Text = "Save", BackColor = Color.RoyalBlue, ForeColor = Color.White,
@@ -101,7 +103,7 @@ let createUpdateTaskForm () =
                 let description = taskTextBox.Text
                 let dueDate = System.DateTime.Parse(dateTextBox.Text)
                 let priority = Int32.Parse priorityTextBox.Text
-                let status = statusTextBox.Text
+                let status = statusComboBox.SelectedItem.ToString()
                 updateTask id description dueDate priority status
                 MessageBox.Show("Task Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)  |> ignore
 
@@ -110,7 +112,7 @@ let createUpdateTaskForm () =
                 taskTextBox.Clear()
                 dateTextBox.Clear()
                 priorityTextBox.Clear()
-                statusTextBox.Clear()
+                statusComboBox.Items.Clear()
 
             with
             | ex -> MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) |> ignore
@@ -118,6 +120,6 @@ let createUpdateTaskForm () =
 
     // Add Controls to the Update Task Form
     updateTaskForm.Controls.AddRange([| titleLabel; taskLabel; idLabel; idTextBox; taskTextBox; dateLabel; dateTextBox;
-                                      priorityLabel; priorityTextBox; statusLabel; statusTextBox; saveButton |])
+                                      priorityLabel; priorityTextBox; statusLabel; statusComboBox; saveButton |])
 
     updateTaskForm

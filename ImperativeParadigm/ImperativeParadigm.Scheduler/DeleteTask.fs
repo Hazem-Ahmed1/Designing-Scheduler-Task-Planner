@@ -9,7 +9,7 @@ open System.Drawing
 
 let deleteTask taskId =
    try
-        let connectionString = GetDataBaseConnection("ConstrFatma")
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
 
         let query = "DELETE FROM Tasks WHERE Task_ID = @Task_ID"
 
@@ -59,7 +59,7 @@ let createDeleteTaskForm () =
     deleteButton.Click.Add(fun _ ->
             try
                 let id = Int32.Parse idTextBox.Text
-                deleteTask id 
+                deleteTask id
                 MessageBox.Show("Task Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)  |> ignore
 
                 // Clear inputs
