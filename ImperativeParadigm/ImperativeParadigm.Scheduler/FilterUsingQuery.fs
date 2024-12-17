@@ -9,7 +9,7 @@ open System.Drawing
 
 let filterTasks status priority dueDate =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
         let query =
                 "SELECT *
                  FROM Tasks

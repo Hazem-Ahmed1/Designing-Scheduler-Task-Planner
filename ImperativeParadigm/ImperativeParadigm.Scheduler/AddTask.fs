@@ -8,7 +8,7 @@ open System.Drawing
 
 let insertTask description dueDate priority  =
     try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
 
         let query = "INSERT INTO Tasks ([Description], DueDate, [Priority]) VALUES (@Description, @DueDate, @Priority);"
 

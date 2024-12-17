@@ -7,7 +7,7 @@ open Utilities
 
 module IOManager =
     let connectionString =
-        "Data Source=localhost;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
+        "Data Source=LAPTOP-7EVQ62QN\\SQLEXPRESS;Initial Catalog=Scheduler;Integrated Security=True;Encrypt=False;Trust Server Certificate=True"
 
     let loadTasks () =
         System.Console.Clear()
