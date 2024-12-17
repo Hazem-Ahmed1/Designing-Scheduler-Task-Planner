@@ -5,26 +5,63 @@ open TaskInfo
 open System.Windows.Forms
 open System.Drawing
 
-// Imperative sorting function
-let sortTasksImperative (tasks: Task list) sortColumn =
-    let mutable sortedTasks = tasks
+//// Imperative sorting function
+//let sortTasksImperative (tasks: Task list) sortColumn =
+//    let mutable sortedTasks = tasks
 
-    // Sort based on the specified column
+//    // Sort based on the specified column
+//    if not (String.IsNullOrWhiteSpace(sortColumn)) then
+//        match sortColumn with
+//        | "DueDate" ->
+//            sortedTasks <-
+//                List.sortBy (fun task -> task.DueDate) sortedTasks
+//        | "Priority" ->
+//            sortedTasks <-
+//                List.sortBy (fun task -> task.Priority) sortedTasks
+//        | "CreatedAt" ->
+//            sortedTasks <-
+//                List.sortBy (fun task -> task.CreatedAt) sortedTasks
+//        | _ ->
+//            printfn "Invalid sort column. No sorting applied."
+
+//    sortedTasks
+
+// Imperative sorting function using manual sorting
+let sortTasksImperative (tasks: Task list) sortColumn =
+    let mutable sortedTasks = tasks |> List.toArray // Convert to array for in-place sorting
+
+    // Helper function to compare two tasks based on the given column
+    let compareTasks (task1: Task) (task2: Task) =
+        match sortColumn with
+        | "DueDate" -> compare task1.DueDate task2.DueDate
+        | "Priority" -> compare task1.Priority task2.Priority
+        | "CreatedAt" -> compare task1.CreatedAt task2.CreatedAt
+        | _ -> 0 // Default to no comparison (equal)
+
+    // Manual insertion sort implementation
+    let insertionSort (arr: Task array) =
+        for i in 1 .. arr.Length - 1 do
+            let key = arr[i]
+            let mutable j = i - 1
+
+            // Move elements that are greater than `key` one position ahead
+            while j >= 0 && compareTasks arr[j] key > 0 do
+                arr[j + 1] <- arr[j]
+                j <- j - 1
+
+            arr[j + 1] <- key
+
+    // Apply sorting only if the column is valid
     if not (String.IsNullOrWhiteSpace(sortColumn)) then
         match sortColumn with
-        | "DueDate" ->
-            sortedTasks <-
-                List.sortBy (fun task -> task.DueDate) sortedTasks
-        | "Priority" ->
-            sortedTasks <-
-                List.sortBy (fun task -> task.Priority) sortedTasks
-        | "CreatedAt" ->
-            sortedTasks <-
-                List.sortBy (fun task -> task.CreatedAt) sortedTasks
+        | "DueDate" | "Priority" | "CreatedAt" ->
+            insertionSort sortedTasks // Perform the manual sorting
         | _ ->
             printfn "Invalid sort column. No sorting applied."
+    else
+        printfn "Sort column is empty. No sorting applied."
 
-    sortedTasks
+    sortedTasks |> Array.toList // Convert back to list
 
 
 // Function to take user input and sort tasks

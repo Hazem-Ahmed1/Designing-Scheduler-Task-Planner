@@ -9,7 +9,7 @@ open System.Drawing
 
 let updateTask taskId newDescription newDueDate newPriority newStatus =
      try
-        let connectionString = GetDataBaseConnection("ConstrAbdelrahman")
+        let connectionString = GetDataBaseConnection("ConstrAbdelwahed")
 
         let query = "UPDATE Tasks
                  SET Description = @Description,
