@@ -85,6 +85,6 @@ let filterByPriority (task: Task) cond = task.Priority = cond
 
 let filterByDueDate (task: Task) (cond: System.DateTime) = task.DueDate.Date = cond.Date
 
-let filterByDeadline (task: Task) (cond: System.DateTime) = task.DueDate.Date <= cond.Date
+let filterByDeadline (task: Task) (cond: System.DateTime) = task.DueDate.Date >= cond.Date
 
 let filterByOverDueDate (task: Task) (cond: System.DateTime) = task.DueDate.Date < cond.Date
