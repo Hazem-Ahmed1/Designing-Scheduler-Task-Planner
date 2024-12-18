@@ -6,7 +6,7 @@ open IOManager
 open Utilities
 
 module TaskManager =
-    
+
 
     let rec merge (left: Task list) (right: Task list) (compare: Task -> Task -> bool) : Task list =
         match left, right with
@@ -28,12 +28,12 @@ module TaskManager =
     let updateTaskStatus taskStatus (task: Task) = { task with Status = taskStatus }
 
     let updateTaskStatusById taskId taskStatus =
-        let tasks = IOManager.loadTasks()
+        let tasks = IOManager.loadTasks ()
         let filteredTasks = filter2 tasks (fun task id -> task.TaskId = id) taskId
+
         match filteredTasks with
-        | [] -> 
-            printfn "Task not found."
-        | task :: _ -> 
+        | [] -> printfn "Task not found."
+        | task :: _ ->
             IOManager.updatetaskindb (updateTaskStatus taskStatus task)
             printfn "Task marked as completed."
 
@@ -196,14 +196,20 @@ module TaskManager =
 
     let checkOverdue () =
         let tasks = IOManager.loadTasks ()
-        let filteredList = filter2 tasks filterByOverDueDate DateTime.Now
-        let overdueList = map2 filteredList (updateTaskStatus Overdue)
+        let overdueList = filter2 tasks filterByOverDueDate DateTime.Now
+        let pendingList = filter2 overdueList filterByStatus Pending
+        let updatedStatusList = map2 pendingList (updateTaskStatus Overdue)
+        map2 updatedStatusList (IOManager.updatetaskindb) |> ignore
 
-        if len2 overdueList = 0 then
-            printf "No Tasks nearing deadline"
+        let newTasks = IOManager.loadTasks ()
+        let taskList = filter2 newTasks filterByStatus Overdue
+
+        if len2 taskList = 0 then
+            printfn "No Tasks are Overdue"
+            printTasks []
         else
             printfn "Overdue tasks:"
-            printTasks overdueList
+            printTasks taskList
 
     let closeDeadline () =
         let tasks = IOManager.loadTasks ()
