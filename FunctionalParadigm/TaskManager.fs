@@ -6,7 +6,7 @@ open IOManager
 open Utilities
 
 module TaskManager =
-
+    
 
     let rec merge (left: Task list) (right: Task list) (compare: Task -> Task -> bool) : Task list =
         match left, right with
@@ -20,7 +20,7 @@ module TaskManager =
         | []
         | [ _ ] -> tasks
         | _ ->
-            let middle = List.length tasks / 2
+            let middle = len2 tasks / 2
             let left = tasks |> List.take middle
             let right = tasks |> List.skip middle
             merge (mergeSort left compare) (mergeSort right compare) compare
@@ -28,13 +28,14 @@ module TaskManager =
     let updateTaskStatus taskStatus (task: Task) = { task with Status = taskStatus }
 
     let updateTaskStatusById taskId taskStatus =
-        let tasks = IOManager.loadTasks ()
-
-        match tasks |> List.tryFind (fun t -> t.TaskId = taskId) with
-        | Some task ->
+        let tasks = IOManager.loadTasks()
+        let filteredTasks = filter2 tasks (fun task id -> task.TaskId = id) taskId
+        match filteredTasks with
+        | [] -> 
+            printfn "Task not found."
+        | task :: _ -> 
             IOManager.updatetaskindb (updateTaskStatus taskStatus task)
             printfn "Task marked as completed."
-        | None -> printfn "Task not found."
 
     let updatePriorityById taskId priority =
         let tasks = IOManager.loadTasks ()
@@ -195,20 +196,14 @@ module TaskManager =
 
     let checkOverdue () =
         let tasks = IOManager.loadTasks ()
-        let overdueList = filter2 tasks filterByOverDueDate DateTime.Now
-        let pendingList = filter2 overdueList filterByStatus Pending
-        let updatedStatusList = map2 pendingList (updateTaskStatus Overdue)
-        map2 updatedStatusList (IOManager.updatetaskindb) |> ignore
+        let filteredList = filter2 tasks filterByOverDueDate DateTime.Now
+        let overdueList = map2 filteredList (updateTaskStatus Overdue)
 
-        let newTasks = IOManager.loadTasks ()
-        let taskList = filter2 newTasks filterByStatus Overdue
-
-        if len2 taskList = 0 then
-            printfn "No Tasks are Overdue"
-            printTasks []
+        if len2 overdueList = 0 then
+            printf "No Tasks nearing deadline"
         else
             printfn "Overdue tasks:"
-            printTasks taskList
+            printTasks overdueList
 
     let closeDeadline () =
         let tasks = IOManager.loadTasks ()
